@@ -36,10 +36,12 @@ double average(double bound, int count)
 }
 
 int main() {
+  clock_t tStart = clock();
   double avg = 999;
 
   avg = average(0.5 , 1);
 
+  cout << "took " << (double)(clock() - tStart)/CLOCKS_PER_SEC << " seconds to complete" << endl;
   cout << "calculated interest: " << avg << endl;
   cout << "result: " << result(avg, POverA) << endl;
   cout << "goal: " << goal << endl;
