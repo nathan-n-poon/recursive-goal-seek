@@ -23,6 +23,7 @@ double average(double bound, int count)
   double difference = result(bound, POverA) - (double)goal;
   if (abs(difference) < fineSensitivity)
   {
+    cout << "took " << count << " recursions" << endl;
     return bound;
   }
   if(difference < 0)
