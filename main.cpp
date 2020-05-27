@@ -1,9 +1,6 @@
 #include <iostream>
 #include <cmath>
 #define finePrecision 0.000001
-#define broadPrecision 0.01
-#define fineSensitivity 2.0*finePrecision
-#define broadSensitivity 10*broadPrecision
 #define goal 42500/15096.04
 #define power 4
 using namespace std;
@@ -21,7 +18,7 @@ double result(double arg, double (*f)(double))
 double average(double bound, int count)
 { 
   double difference = result(bound, POverA) - (double)goal;
-  if (abs(difference) < fineSensitivity)
+  if (abs(difference) < finePrecision)
   {
     cout << "took " << count << " recursions" << endl;
     return bound;
